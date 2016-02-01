@@ -34,7 +34,7 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', '$UsuarioServi
 			$UsuarioService.signup(user, name, pass);
 		};
 
-		$UsuarioService.get();
+		$scope.items = $UsuarioService.get();
   
 });
 
