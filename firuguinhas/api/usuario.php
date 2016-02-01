@@ -1,12 +1,12 @@
 <?php
-// Aqui você se conecta ao banco
-$mysqli = new mysqli("mysql.hostinger.com.br", "u577336267_adm", "H0st1ng3r!", "u577336267_apps");
+// Aqui vocï¿½ se conecta ao banco
+$mysqli = new mysqli("mysql.hostinger.com.br", "u474620514_adm", "H0st1ng3r!", "u474620514_db");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-// lê o json diretamente dos dados enviados no POST (input)
+// lï¿½ o json diretamente dos dados enviados no POST (input)
 $json = file_get_contents('php://input');
-$obj_php = json_decode($json); // $obj_php agora é exatamente o objeto/array enviado pelo servidor
+$obj_php = json_decode($json); // $obj_php agora ï¿½ exatamente o objeto/array enviado pelo servidor
 
 foreach ( $obj_php as $nome) { 
    $sql = "INSERT INTO usuario (nome, senha) VALUES ('" . $nome . "')"; 
@@ -18,7 +18,7 @@ foreach ( $obj_php as $nome) {
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
-// Executa uma consulta que pega cinco notícias
+// Executa uma consulta que pega cinco notï¿½cias
 $sql = "SELECT nome FROM usuario"; 
 
 $query = $mysqli->query($sql);
