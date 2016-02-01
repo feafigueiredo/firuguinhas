@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="app">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="content-language" content="pt-br" />
+      <title>Meus Aplicativos</title>
+      <link rel="stylesheet" href="/firuguinhas/web/css/bootstrap.min.css" />
+   </head>
+ 
+   <body>
+      <ul class="nav nav-tabs" ng-controller="AutenticacaoCtrl">
+         <li ng-class="{active: activetab == '/'}"><a href="/">Página Inicial</a></li>
+         <li ng-class="{active: activetab == '/about'}"><a href="/about">Sobre</a></li>
+         <li ng-class="{active: activetab == '/contact'}"><a href="/contact">Contato</a></li>
+	 <li ng-hide="autenticado"ng-class="{active: activetab == '/login'}"><a href="/login">Login</a></li>
+	 <li ng-show="autenticado"><a ng-click="logout()" href="/logout">Logout</a></li>
+      </ul>
+ 
+      <div ng-view></div>
+ 
+      <script src="/firuguinhas/web/js/angular.min.js"></script>
+      <script src="/firuguinhas/web/js/angular-route.min.js"></script>
+
+      <script src="/firuguinhas/web/js/app/app.js"></script>
+      <script src="/firuguinhas/web/js/app/Controllers/controllers.js"></script>
+
+   </body>
+</html>
