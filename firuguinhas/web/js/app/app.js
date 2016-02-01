@@ -7,29 +7,36 @@ app.config(function($routeProvider, $locationProvider)
  
    $routeProvider
  
-   // para a rota '#/', carregaremos o template home.html e o controller 'HomeCtrl'
+   // para a rota '/', carregaremos o template home.html e o controller 'HomeCtrl'
    .when('/', {
-      templateUrl : '/MyTest/app/Views/home.html',
+      templateUrl : '/firuguinhas/web/js/app/Views/home.html',
       controller     : 'HomeCtrl',
    })
  
-   // para a rota '#/sobre', carregaremos o template sobre.html e o controller 'SobreCtrl'
+   // para a rota '/sobre', carregaremos o template sobre.html e o controller 'SobreCtrl'
    .when('/about', {
-      templateUrl : '/MyTest/app/Views/about.html',
-      controller  : 'SobreCtrl',
+      templateUrl : '/firuguinhas/web/js/app/Views/about.html',
+      controller  : 'AboutCtrl',
    })
  
-   // para a rota '#/contato', carregaremos o template contato.html e o controller 'ContatoCtrl'
+   // para a rota '/contato', carregaremos o template contato.html e o controller 'ContatoCtrl'
    .when('/contact', {
-      templateUrl : '/MyTest/app/Views/contact.html',
-      controller  : 'ContatoCtrl',
+      templateUrl : '/firuguinhas/web/js/app/Views/contact.html',
+      controller  : 'ContactCtrl',
    })
 
     // para a rota '/login', carregaremos o template contato.html e o controller 'LoginCtrl'
    .when('/login', {
-      templateUrl : '/MyTest/app/Views/login.html',
+      templateUrl : '/firuguinhas/web/js/app/Views/login.html',
       controller  : 'LoginCtrl',
    })
-   // caso n„o seja nenhum desses, redirecione para a rota '/'
+   
+   // para a rota '/login', carregaremos o template contato.html e o controller 'LoginCtrl'
+   .when('/signup', {
+      templateUrl : '/firuguinhas/web/js/app/Views/signup.html',
+      controller  : 'SignUpCtrl',
+   })
+   
+   // caso n√£o seja nenhum desses, redirecione para a rota '/'
    .otherwise ({ redirectTo: '/' });
 });

@@ -1,4 +1,9 @@
-app.controller('AutenticacaoCtrl', function($rootScope, $scope){
+/*
+ ******************************************************************************
+ * Auth
+ ******************************************************************************
+ */
+app.controller('AuthCtrl', function($rootScope, $scope){
   $rootScope.autenticado = false;
   
   $rootScope.logout = function(){
@@ -7,50 +12,80 @@ app.controller('AutenticacaoCtrl', function($rootScope, $scope){
   };
 });
 
+/*
+ ******************************************************************************
+ * Home
+ ******************************************************************************
+ */
 app.controller('HomeCtrl', function($rootScope, $location)
 {
   $rootScope.activetab = $location.path();
 });
  
-app.controller('SobreCtrl', function($rootScope, $scope, $location, $http)
-{
-  $rootScope.activetab = $location.path();
+/*
+ ******************************************************************************
+ * About
+ ******************************************************************************
+ */
+app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', '$UsuarioService',
+    function($rootScope, $scope, $location, $UsuarioService){
+		$rootScope.activetab = $location.path();
+		$scope.sendPost = function(){
+			$UsuarioService.signup(user, name, pass);
+		};
 
-
-  $scope.sendPost = function() {
-        console.log("Nome recebido:" + $scope.nome);
-        var data = {nome: $scope.nome};
-
-        $http.post("/MyTest/Services/usuario.php", data).success(function(data, status) {
-            $location.path('/');
-        })
-    } 
-
-$http({
-  method: 'GET',
-  url: '/MyTest/Services/usuario.php'
-}).then(function successCallback(response) {
-    $rootScope.items = response.data;
-  }, function errorCallback(response) {
-    $rootScope.items = ['Teste', 'Teste2'];
-  });
+		$UsuarioService.get();
   
 });
- 
-app.controller('ContatoCtrl', function($rootScope, $location)
-{
-  $rootScope.activetab = $location.path();
-});
 
-app.controller('LoginCtrl', function($rootScope, $scope, $location){
-	$rootScope.activetab = $location.path();
-	
-	$scope.entrar = function(){
-		console.log("Login:");
-		console.log("User: " + $scope.usuario);
-		console.log("Pass: " + $scope.senha);
-		$rootScope.autenticado = true;
-		$rootScope.usuario = $scope.usuario;
-		$location.path('/');
-	};
-});	
+/*
+ ******************************************************************************
+ * Contact
+ ******************************************************************************
+ */
+app.controller('ContactCtrl', ['$rootScope', '$location', 
+    function($rootScope, $location){
+		$rootScope.activetab = $location.path();
+	}
+]);
+
+/*
+ ******************************************************************************
+ * Login
+ ******************************************************************************
+ */
+app.controller('LoginCtrl',['$rootScope', '$scope', '$location',
+    function($rootScope, $scope, $location){
+		$rootScope.activetab = $location.path();
+		
+		$scope.login = function(){
+			console.log("Login:");
+			console.log("User: " + $scope.user);
+			console.log("Pass: " + $scope.pass);
+			$rootScope.autenticado = true;
+			$rootScope.user = $scope.user;
+			$location.path('/');
+		};
+	}
+]);	
+
+/*
+ ******************************************************************************
+ * Sign Up
+ ******************************************************************************
+ */
+app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', '$userService', 
+    function($rootScope, $scope, $location, $userService){
+		$rootScope.activetab = $location.path();
+		
+		$scope.entrar = function(){
+			console.log("SignUp:");
+			console.log("User: " + $scope.user);
+			console.log("Name: " + $scope.name);
+			console.log("Pass: " + $scope.pass);
+			$rootScope.autenticado = true;
+			$rootScope.usuario = $scope.usuario;
+			$location.path('/');
+		};
+	}
+]);
