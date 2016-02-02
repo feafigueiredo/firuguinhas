@@ -6,7 +6,7 @@
 app.controller('AuthCtrl', function($rootScope, $scope){
   $rootScope.autenticado = false;
   
-  $rootScope.logout = function(){
+  $scope.logout = function(){
 	console.log("Loging off!");
     $rootScope.autenticado = false;	  
   };
