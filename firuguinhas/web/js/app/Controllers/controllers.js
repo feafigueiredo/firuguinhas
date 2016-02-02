@@ -5,6 +5,7 @@
  */
 app.controller('AuthCtrl', ['$rootScope', '$scope', 
     function($rootScope, $scope){
+		console.log("Initialized!");
 		$rootScope.autenticado = false;
   
 		$scope.logout = function(){
