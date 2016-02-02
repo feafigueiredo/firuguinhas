@@ -13,8 +13,8 @@
          <li ng-class="{active: activetab == '/'}"><a href="#">Página Inicial</a></li>
          <li ng-class="{active: activetab == '/about'}"><a href="#about">Sobre</a></li>
          <li ng-class="{active: activetab == '/contact'}"><a href="#contact">Contato</a></li>
-	 	<li ng-hide="autenticado"ng-class="{active: activetab == '#login'}"><a href="/login">Entrar</a></li>
-	 	<li ng-hide="autenticado"ng-class="{active: activetab == '#signup'}"><a href="/signup">Cadastrar</a></li>
+	 	<li ng-hide="autenticado"ng-class="{active: activetab == '/login'}"><a href="#login">Entrar</a></li>
+	 	<li ng-hide="autenticado"ng-class="{active: activetab == '/signup'}"><a href="#signup">Cadastrar</a></li>
 	 	<li ng-show="autenticado"><a ng-click="logout()" href="#logout">Sair</a></li>
       </ul>
  
