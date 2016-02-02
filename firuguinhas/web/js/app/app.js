@@ -3,7 +3,7 @@ var app = angular.module('app',['ngRoute']);
 app.config(function($routeProvider, $locationProvider)
 {
    // remove o # da url
-   $locationProvider.html5Mode(true);
+   //$locationProvider.html5Mode(true);
  
    $routeProvider
  
