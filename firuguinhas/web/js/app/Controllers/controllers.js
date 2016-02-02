@@ -3,24 +3,28 @@
  * Auth
  ******************************************************************************
  */
-app.controller('AuthCtrl', function($rootScope, $scope){
-  $rootScope.autenticado = false;
+app.controller('AuthCtrl', ['$rootScope', '$scope', 
+    function($rootScope, $scope){
+		$rootScope.autenticado = false;
   
-  $scope.logout = function(){
-	console.log("Loging off!");
-    $rootScope.autenticado = false;	  
-  };
-});
+		$scope.logout = function(){
+			console.log("Loging off!");
+			$rootScope.autenticado = false;	  
+		};
+
+	}
+]);
 
 /*
  ******************************************************************************
  * Home
  ******************************************************************************
  */
-app.controller('HomeCtrl', function($rootScope, $location)
-{
-  $rootScope.activetab = $location.path();
-});
+app.controller('HomeCtrl', ['$rootScope', '$location', 
+    function($rootScope, $location){
+		$rootScope.activetab = $location.path();
+	}
+]);
  
 /*
  ******************************************************************************
