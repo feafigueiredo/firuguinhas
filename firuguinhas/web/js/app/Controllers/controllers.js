@@ -85,7 +85,7 @@ app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UsuarioServic
     function($rootScope, $scope, $location, UsuarioService){
 		$rootScope.activetab = $location.path();
 		
-		$scope.entrar = function(){
+		$scope.signup = function(){
 			console.log("SignUp:");
 			console.log("User: " + $scope.user);
 			console.log("Name: " + $scope.name);
