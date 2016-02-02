@@ -82,7 +82,7 @@ app.controller('LoginCtrl',['$rootScope', '$scope', '$location',
  ******************************************************************************
  */
 app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', '$UserService', 
-    function($rootScope, $scope, $location, $userService){
+    function($rootScope, $scope, $location, $UserService){
 		$rootScope.activetab = $location.path();
 		
 		$scope.entrar = function(){
@@ -91,7 +91,7 @@ app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', '$UserService'
 			console.log("Name: " + $scope.name);
 			console.log("Pass: " + $scope.pass);
 			
-			if($userService.signup($scope.user, $scope.name, $scope.pass)){
+			if($UserService.signup($scope.user, $scope.name, $scope.pass)){
 				console.log("Autenticado!");
 				$rootScope.autenticado = true;
 				$rootScope.usuario = $scope.usuario;
