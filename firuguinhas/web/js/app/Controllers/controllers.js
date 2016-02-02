@@ -40,7 +40,7 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioServic
 			UsuarioService.signup(user, name, pass);
 		};
 
-		$scope.items = UsuarioService.get();
+		$scope.items = UsuarioService.getUsers();
   
 	}
 ]);
@@ -81,8 +81,8 @@ app.controller('LoginCtrl',['$rootScope', '$scope', '$location',
  * Sign Up
  ******************************************************************************
  */
-app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UserService', 
-    function($rootScope, $scope, $location, UserService){
+app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UsuarioService', 
+    function($rootScope, $scope, $location, UsuarioService){
 		$rootScope.activetab = $location.path();
 		
 		$scope.entrar = function(){

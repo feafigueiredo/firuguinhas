@@ -25,7 +25,7 @@ app.factory('UsuarioService', ['$http', function($http){
         	});
 	};
 	
-	function get(){
+	function getUsers(){
 		$http.get(baseUrl, data)
     	.success(function(data, status) {
     		return response.data;
@@ -44,4 +44,19 @@ app.factory('UsuarioService', ['$http', function($http){
 			  });
 			  */
 	};
+	
+	return {
+		signup: function(user, name, pass) {
+            signup(user, name, pass)
+        },
+        signin: function(user, pass) {
+            signin(user, pass)
+        },
+        logout: function(success) {
+        	delete $localStorage.token;
+        },
+        getUsers: function(success, error) {
+        	getUsers();
+        }
+    };
 }]);
