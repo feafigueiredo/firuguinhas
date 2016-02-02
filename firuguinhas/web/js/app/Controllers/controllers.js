@@ -32,8 +32,8 @@ app.controller('HomeCtrl', ['$rootScope', '$location',
  * About
  ******************************************************************************
  */
-app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', '$UsuarioService',
-    function($rootScope, $scope, $location, $UsuarioService){
+app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioService',
+    function($rootScope, $scope, $location, UsuarioService){
 		$rootScope.activetab = $location.path();
 		
 		$scope.sendPost = function(){
@@ -81,8 +81,8 @@ app.controller('LoginCtrl',['$rootScope', '$scope', '$location',
  * Sign Up
  ******************************************************************************
  */
-app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', '$UserService', 
-    function($rootScope, $scope, $location, $UserService){
+app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UserService', 
+    function($rootScope, $scope, $location, UserService){
 		$rootScope.activetab = $location.path();
 		
 		$scope.entrar = function(){
