@@ -41,7 +41,8 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', '$UsuarioServi
 
 		$scope.items = $UsuarioService.get();
   
-});
+	}
+]);
 
 /*
  ******************************************************************************
