@@ -91,7 +91,7 @@ app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UsuarioServic
 			console.log("Name: " + $scope.name);
 			console.log("Pass: " + $scope.pass);
 			
-			if(UserService.signup($scope.user, $scope.name, $scope.pass)){
+			if(UsuarioService.signup($scope.user, $scope.name, $scope.pass)){
 				console.log("Autenticado com sucesso!");
 				$rootScope.autenticado = true;
 				$rootScope.usuario = $scope.usuario;
