@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	// Executa uma consulta que pega cinco noticias
-	$sql = "SELECT name FROM usuario"; 
+	$sql = "SELECT name FROM Usuario"; 
 	echo $sql . "<br>";
 	
 	if(!$query = $mysqli->query($sql)){
