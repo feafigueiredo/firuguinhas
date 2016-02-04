@@ -22,13 +22,14 @@ foreach ( $obj_php as $u) {
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 // Executa uma consulta que pega cinco not�cias
 $sql = "SELECT name FROM usuario"; 
+echo $query;
 
 $query = $mysqli->query($sql);
 
 if($query === FALSE) {
     die(mysql_error()); 
 }
-echo $query;
+
 
 $arr = array();
 while ($dados = $query->fetch_array()) {
