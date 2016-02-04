@@ -29,7 +29,7 @@ echo $_SERVER['REQUEST_METHOD'];
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	// Executa uma consulta que pega cinco noticias
 	$sql = "SELECT name FROM usuario"; 
-	echo $query;
+	echo $sql;
 	
 	$query = $mysqli->query($sql);
 	
