@@ -24,8 +24,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 }
 
-echo "Passei do post";
-
+echo "Passei do POST";
+echo $_SERVER['REQUEST_METHOD'];
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	// Executa uma consulta que pega cinco noticias
 	$sql = "SELECT name FROM usuario"; 
