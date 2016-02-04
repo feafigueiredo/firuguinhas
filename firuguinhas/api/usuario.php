@@ -29,8 +29,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	
 	if(!$query = $mysqli->query($sql)){
 		echo "Falhei na consulta.";
+	}else{
+		echo $query . "<br>";
 	}
-	echo $query . "<br>";
 	
 	if($query === FALSE) {
 	    die(mysql_error()); 
