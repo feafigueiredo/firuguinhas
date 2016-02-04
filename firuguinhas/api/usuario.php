@@ -2,6 +2,8 @@
 // Aqui voce se conecta ao banco
 $mysqli = new mysqli("mysql.hostinger.com.br", "u474620514_adm", "H0st1ng3r!", "u474620514_db");
 
+echo $_SERVER['REQUEST_METHOD'];
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 // l� o json diretamente dos dados enviados no POST (input)
