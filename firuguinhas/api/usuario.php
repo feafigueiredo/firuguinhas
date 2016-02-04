@@ -1,5 +1,5 @@
 <?php
-// Aqui voc� se conecta ao banco
+// Aqui voce se conecta ao banco
 $mysqli = new mysqli("mysql.hostinger.com.br", "u474620514_adm", "H0st1ng3r!", "u474620514_db");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -8,11 +8,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $json = file_get_contents('php://input');
 $obj_php = json_decode($json); // $obj_php agora � exatamente o objeto/array enviado pelo servidor
 
-foreach ( $obj_php as $nome) { 
-   $sql = "INSERT INTO usuario (nome, senha) VALUES ('" . $nome . "')"; 
+foreach ( $obj_php as $u) { 
+   $sql = "INSERT INTO usuario (user, name, pass) VALUES " +
+   		"('" . $u->nome . "', " +
+   		"'" . $u->user . "', " +
+   		"md5('" . $u->pass . "'))"; 
    $query = $mysqli->query($sql);
 }
-
 
 
 }
