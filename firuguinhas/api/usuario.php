@@ -2,8 +2,6 @@
 // Aqui voce se conecta ao banco
 $mysqli = new mysqli("mysql.hostinger.com.br", "u474620514_adm", "H0st1ng3r!", "u474620514_db");
 
-echo $_SERVER['REQUEST_METHOD'];
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
 	// Le o json diretamente dos dados enviados no POST (input)
@@ -24,13 +22,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 }
 
-echo "Passei do POST";
-echo $_SERVER['REQUEST_METHOD'];
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	// Executa uma consulta que pega cinco noticias
 	$sql = "SELECT name FROM usuario"; 
+	echo $sql . "<br>";
 	
 	$query = $mysqli->query($sql);
+	echo $query . "<br>";
 	
 	if($query === FALSE) {
 	    die(mysql_error()); 
@@ -39,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	
 	$arr = array();
 	while ($dados = $query->fetch_array()) {
-		echo $dados[name];
+		echo $dados[name] . "<br>";
 		array_push($arr, $dados[name]);
 	}
 	
