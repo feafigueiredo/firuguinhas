@@ -27,7 +27,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$sql = "SELECT name FROM usuario"; 
 	echo $sql . "<br>";
 	
-	$query = $mysqli->query($sql);
+	if(!$query = $mysqli->query($sql)){
+		echo "Falhei na consulta.";
+	}
 	echo $query . "<br>";
 	
 	if($query === FALSE) {
