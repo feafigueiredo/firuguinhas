@@ -8,10 +8,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$json = file_get_contents('php://input');
 	$obj_php = json_decode($json); // $obj_php agora eh exatamente o objeto/array enviado pelo servidor
 	
+	echo $obj_php;
+	
 	foreach ( $obj_php as $u) { 
 	   $sql = "INSERT INTO Usuario (user, name, pass) VALUES " +
-	   		"('" . $u->nome . "', " +
-	   		"'" . $u->user . "', " +
+	   		"('" . $u->user . "', " +
+	   		"'" . $u->name . "', " +
 	   		"md5('" . $u->pass . "'))"; 
 	   
 	   echo $sql;
