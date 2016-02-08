@@ -5,10 +5,7 @@ app.factory('UsuarioService', ['$http', function($http){
 
 	function signup(user, name, pass) {
 		console.log("Sign Up - Service")
-		console.log("User:" + user);
-		console.log("Name:" + name);
-		console.log("Pass:" + pass);
-		
+	
 		var data = 
 			{
 				'user': user,
@@ -16,6 +13,8 @@ app.factory('UsuarioService', ['$http', function($http){
 				'pass': pass
 			};
 
+		console.log("data: " + data);
+		
         $http.post(baseUrl, data)
         	.success(function(data, status) {
         		return true;
