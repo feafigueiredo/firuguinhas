@@ -9,9 +9,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$obj_php = json_decode($json); // $obj_php agora eh exatamente o objeto/array enviado pelo servidor
 	
 
-	$sql = "INSERT INTO Usuario (user, name, pass) VALUES " +
-	   		"('" . $_POST['user'] . "', " +
-	   		"'" . $_POST['name'] . "', " +
+	$sql = "INSERT INTO Usuario (user, name, pass) VALUES " .
+	   		"('" . $_POST['user'] . "', " .
+	   		"'" . $_POST['name'] . "', " .
 	   		"md5('" . $_POST['pass'] . "'))"; 
 	   
 	echo $sql;
