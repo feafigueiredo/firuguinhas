@@ -14,8 +14,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	   		"'" . $u->user . "', " +
 	   		"md5('" . $u->pass . "'))"; 
 	   
-	   echo $sql;
-	   
 	   $query = $mysqli->query($sql);
 	}
 
@@ -25,20 +23,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	// Executa uma consulta que pega cinco noticias
 	$sql = "SELECT name FROM Usuario"; 
-	echo $sql . "<br>";
-	
-	if(!$query = $mysqli->query($sql)){
-		echo "Falhei na consulta.";
-	}
 	
 	if($query === FALSE) {
 	    die(mysql_error()); 
 	}
 	
-	
 	$arr = array();
 	while ($dados = $query->fetch_array()) {
-		echo $dados[name] . "<br>";
 		array_push($arr, $dados[name]);
 	}
 	
