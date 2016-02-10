@@ -1,6 +1,7 @@
 <?php
 // Aqui voce se conecta ao banco
-$mysqli = new mysqli("mysql.hostinger.com.br", "u474620514_adm", "H0st1ng3r!", "u474620514_db");
+// $mysqli = new mysqli("mysql.hostinger.com.br", "u474620514_adm", "H0st1ng3r!", "u474620514_db");
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
@@ -9,17 +10,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$obj_php = json_decode($json); // $obj_php agora eh exatamente o objeto/array enviado pelo servidor
 	
 
-	$sql = "INSERT INTO Usuario (user, name, pass) VALUES " .
+	foreach ( $obj_php as $nome) {
+		$sql = "INSERT INTO Usuario (user, name, pass) VALUES " .
 	   		"('" . $_POST['user'] . "', " .
 	   		"'" . $_POST['name'] . "', " .
 	   		"md5('" . $_POST['pass'] . "'))"; 
-	   
-	echo $sql;
-	   
-	$query = $mysqli->query($sql);
-
-
-
+		
+		$query = $mysqli->query($sql);
+	}
+	
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
