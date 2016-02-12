@@ -12,8 +12,6 @@ app.factory('UsuarioService', ['$http', function($http){
 				'name': name,
 				'pass': pass
 			};
-
-		console.log("data: " + data);
 		
         $http.post(baseUrl, data)
         	.success(function(data, status) {

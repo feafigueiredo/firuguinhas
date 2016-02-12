@@ -13,11 +13,12 @@ $user = new UsuarioDAO($db);
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
 	$data = json_decode(file_get_contents("php://input")); 
-	 
+	
+	foreach($data as $obj)
 	// set product property values
-	$product->user = $data["user"];
-	$product->name = $data["name"];
-	$product->pass = $data["pass"];
+	$product->user = $obj["user"];
+	$product->name = $obj["name"];
+	$product->pass = $obj["pass"];
 	     
 	// create the product
 	if($product->create()){
