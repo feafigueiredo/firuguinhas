@@ -1,12 +1,12 @@
 <?php
 // get database connection
-include_once $_SERVER['DOCUMENT_ROOT'].'/Config/Database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Config/Database.php';
  
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-include_once $_SERVER['DOCUMENT_ROOT'].'/Objects/UsuarioDAO.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Objects/UsuarioDAO.php';
 $user = new UsuarioDAO($db);
 
 
