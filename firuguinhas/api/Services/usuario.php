@@ -1,12 +1,12 @@
 <?php
 // get database connection
-include_once dirname(__FILE__).'/Config/Database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/Config/Database.php';
  
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-include_once dirname(__FILE__).'/Objects/UsuarioDAO.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/Objects/UsuarioDAO.php';
 $user = new UsuarioDAO($db);
 
 
