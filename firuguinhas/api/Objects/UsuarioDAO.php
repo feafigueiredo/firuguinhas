@@ -56,7 +56,8 @@ class UsuarioDAO{
     	}
     	
     	$this->list = array();
-    	while ($dados = $rs->fetch_array()) {
+
+    	foreach ($rs as $dados){
     		$newUser = new UsuarioDAO($this->db);
     		
     		$newUser->user = $dados[user];
