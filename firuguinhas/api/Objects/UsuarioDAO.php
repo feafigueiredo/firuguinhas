@@ -51,7 +51,7 @@ class UsuarioDAO{
     		$query = $query . " WHERE user = '" . user . "'";
     	}
     	
-    	if(!$rs = $mysqli->query($query)){
+    	if(!$rs = $this->conn->query($query)){
     		return false;
     	}
     	
