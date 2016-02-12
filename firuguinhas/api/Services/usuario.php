@@ -15,9 +15,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$data = json_decode(file_get_contents("php://input")); 
 	 
 	// set product property values
-	$product->user = $data->user;
-	$product->name = $data->name;
-	$product->pass = $data->pass;
+	$product->user = $data["user"];
+	$product->name = $data["name"];
+	$product->pass = $data["pass"];
 	     
 	// create the product
 	if($product->create()){
