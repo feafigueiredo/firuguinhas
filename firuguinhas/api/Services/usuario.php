@@ -1,12 +1,12 @@
 <?php
 // get database connection
-include_once __ROOT__ . '/firuguinhas/api/Config/Database.php';
+include_once dirname(__FILE__).'/../Config/Database.php';
  
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-include_once __ROOT__ . '/firuguinhas/api/Objects/UsuarioDAO.php';
+include_once dirname(__FILE__).'/../Objects/UsuarioDAO.php';
 $user = new UsuarioDAO($db);
 
 
