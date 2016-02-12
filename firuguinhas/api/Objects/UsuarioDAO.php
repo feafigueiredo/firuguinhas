@@ -63,7 +63,7 @@ class UsuarioDAO{
     		$newUser->user = $dados[user];
     		$newUser->name = $dados[name];
     		
-    		array_push($list, $newUser);
+    		array_push($this->list, $newUser);
     	}
     	
     	return true;
