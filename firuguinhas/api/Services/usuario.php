@@ -1,6 +1,6 @@
 <?php
 // get database connection
-include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Config/Database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/config/Database.php';
  
 $database = new Database();
 $db = $database->getConnection();
