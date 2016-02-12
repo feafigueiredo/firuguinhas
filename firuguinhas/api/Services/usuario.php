@@ -37,6 +37,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$user->user = $_GET["user"];
 	$user->name = $_GET["name"];
 
+	$userDao->userData = $user;
+	
 	if($userDao->get()){
 		echo json_encode($userDao->list);
 	}else{
