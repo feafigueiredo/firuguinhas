@@ -5,10 +5,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Config/Database.php';
 $database = new Database();
 $db = $database->getConnection();
  
-// instantiate product object
-include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Objects/UsuarioDAO.php';
-$user = new UsuarioDAO($db);
+// instantiate dao object
+include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/DAO/UsuarioDAO.php';
+$userDao = new UsuarioDAO($db);
 
+include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Objects/Usuario.php';
+$user = new Usuario();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
@@ -20,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$user->pass = $obj["pass"];
 		     
 		// create the product
-		if($user->insert()){
+		if($userDao->insert()){
 		    echo "Product was created.";
 		}
 		 
@@ -35,8 +37,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$user->user = $_GET["user"];
 	$user->name = $_GET["name"];
 
-	if($user->get()){
-		echo json_encode($user->list);
+	if($userDao->get()){
+		echo json_encode($userDao->list);
 	}else{
 		echo "Error.";
 	}
