@@ -16,7 +16,7 @@ class UsuarioDAO{
         $this->conn = $db;
     }
     
-    public function create(){
+    public function insert(){
     	 
     	// query to insert record
     	$query = "INSERT INTO " . $this->table_name . "

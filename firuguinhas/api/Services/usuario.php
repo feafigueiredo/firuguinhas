@@ -14,20 +14,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
 	$data = json_decode(file_get_contents("php://input")); 
 	
-	foreach($data as $obj)
-	// set product property values
-	$product->user = $obj["user"];
-	$product->name = $obj["name"];
-	$product->pass = $obj["pass"];
-	     
-	// create the product
-	if($product->create()){
-	    echo "Product was created.";
-	}
-	 
-	// if unable to create the product, tell the user
-	else{
-	    echo "Unable to create product.";
+	foreach($data as $obj){
+		$user->user = $obj["user"];
+		$user->name = $obj["name"];
+		$user->pass = $obj["pass"];
+		     
+		// create the product
+		if($user->insert()){
+		    echo "Product was created.";
+		}
+		 
+		// if unable to create the product, tell the user
+		else{
+		    echo "Unable to create product.";
+		}
 	}
 }
 
