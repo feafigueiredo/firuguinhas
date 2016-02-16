@@ -35,11 +35,7 @@ app.controller('HomeCtrl', ['$rootScope', '$location',
 app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioService',
     function($rootScope, $scope, $location, UsuarioService){
 		$rootScope.activetab = $location.path();
-		
-		$scope.sendPost = function(){
-			UsuarioService.signup(user, name, pass);
-		};
-
+		$scope.hello = "Hello".
 		$scope.items = UsuarioService.getUsers();
 	}
 ]);
