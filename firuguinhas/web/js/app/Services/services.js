@@ -1,9 +1,9 @@
 'use strict';
  
-app.factory('UsuarioService', ['$http', function($http){
+app.service('UsuarioService', ['$http', function($http){
 	var baseUrl = "/firuguinhas/api/Services/usuario.php";
 
-	function signup(user, name, pass) {
+	this.signup = function(user, name, pass) {
 		console.log("Sign Up - Service")
 	
 		var data = 
@@ -24,7 +24,7 @@ app.factory('UsuarioService', ['$http', function($http){
         	});
 	};
 	
-	function getUsers(){
+	this.getUsers = function(){
 		console.log("Get Users - Service")
 		
 		var data = "";
@@ -35,19 +35,4 @@ app.factory('UsuarioService', ['$http', function($http){
     		return response.data;
         });
 	};
-	
-	return {
-		signup: function(user, name, pass) {
-            signup(user, name, pass)
-        },
-        signin: function(user, pass) {
-            signin(user, pass)
-        },
-        logout: function(success) {
-        	delete $localStorage.token;
-        },
-        getUsers: function(success, error) {
-        	return getUsers();
-        }
-    };
 }]);
