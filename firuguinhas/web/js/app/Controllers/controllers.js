@@ -67,8 +67,7 @@ app.controller('LoginCtrl',['$rootScope', '$scope', '$location',
 		
 		$scope.login = function(){
 			console.log("Login:");
-			console.log("User: " + $scope.user);
-			console.log("Pass: " + $scope.pass);
+			
 			$rootScope.autenticado = true;
 			$rootScope.user = $scope.user;
 			$location.path('/');
@@ -87,9 +86,6 @@ app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UsuarioServic
 		
 		$scope.signup = function(){
 			console.log("SignUp:");
-			console.log("User: " + $scope.user);
-			console.log("Name: " + $scope.name);
-			console.log("Pass: " + $scope.pass);
 			
 			if(UsuarioService.signup($scope.user, $scope.name, $scope.pass)){
 				console.log("Autenticado com sucesso!");
