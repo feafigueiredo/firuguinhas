@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$user->user = $_GET["user"];
 	$user->name = $_GET["name"];
 
-	error_log("user: " . $user->user . "_#_name: " . $user->name);
+	error_log("(#)user: " . $user->user . "(#)name: " . $user->name);
 	$userDao->userData = $user;
 	
 	if($userDao->get()){

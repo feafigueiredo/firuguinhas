@@ -28,7 +28,7 @@ app.factory('UsuarioService', ['$http', function($http){
 		var data = "";
 		$http.get(baseUrl, data)
     	.success(function(data, status) {
-    		return response.data;
+    		return data;
     	})
     	.error(function(){
     		return;
