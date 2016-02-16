@@ -33,7 +33,8 @@ app.factory('UsuarioService', ['$http', function($http){
     		console.log("Status: " + response.status);
     		console.log("  Data: " + response.data );
     		console.log("Header: " + response.headers );
-    		console.log("  Text: " + response.statusText);
+    		console.log("  Text: " + response.statusText );
+    		
     		return response.data;
         });
 	};
