@@ -8,11 +8,9 @@ app.service('UsuarioService', ['$http', function($http){
 	
 		var data = 
 			{
-				'newUser' : {
-					'user': user,
-					'name': name,
-					'pass': pass
-				}
+				'user': user,
+				'name': name,
+				'pass': pass
 			};
 		
         $http.post(baseUrl, data)

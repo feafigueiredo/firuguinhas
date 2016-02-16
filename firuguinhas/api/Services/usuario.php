@@ -23,9 +23,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$obj = json_decode($json); 
 	
-	$user->user = $obj["user"];
-	$user->name = $obj["name"];
-	$user->pass = $obj["pass"];
+	$user->user = $obj->user;
+	$user->name = $obj->name;
+	$user->pass = $obj->pass;
 	     
 	// create the product
 	if($userDao->insert()){
