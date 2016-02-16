@@ -28,7 +28,7 @@ app.service('UsuarioService', ['$http', function($http){
 		console.log("Get Users - Service")
 		
 		var data = "";
-		$http.get(baseUrl, data)
+		return $http.get(baseUrl, data)
     	.then(function(response) {
     		console.log("Users: " + response.data.length);
     		
