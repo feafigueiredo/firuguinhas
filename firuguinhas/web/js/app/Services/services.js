@@ -8,9 +8,11 @@ app.factory('UsuarioService', ['$http', function($http){
 	
 		var data = 
 			{
-				'user': user,
-				'name': name,
-				'pass': pass
+				'newUser' : {
+					'user': user,
+					'name': name,
+					'pass': pass
+				}
 			};
 		
         $http.post(baseUrl, data)
