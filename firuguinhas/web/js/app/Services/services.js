@@ -25,9 +25,13 @@ app.factory('UsuarioService', ['$http', function($http){
 	};
 	
 	function getUsers(){
+		console.log("Get Users - Service")
+		
 		var data = "";
 		$http.get(baseUrl, data)
     	.success(function(data, status) {
+    		console.log("Data: " + data);
+    		
     		return data;
     	})
     	.error(function(){
