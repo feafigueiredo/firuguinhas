@@ -19,7 +19,7 @@ error_log( "########## Services - Usuario ##########");
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
 	$json = file_get_contents("php://input");
-	error_log( "User received: " . $json);
+	error_log( "POST:");
 
 	$obj = json_decode($json); 
 	
@@ -34,6 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// create the product
 	if($userDao->insert()){
 	    error_log(  "User was created." );
+	    echo "Success!";
 	}
 	 
 	// if unable to create the product, tell the user
@@ -43,18 +44,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
+	error_log("GET");
+	
 	$user->user = $_GET["user"];
 	$user->name = $_GET["name"];
 
-	error_log("(#)user: " . $user->user . "(#)name: " . $user->name);
+	error_log("(#)User: " . $user->user . "\n(#)Name: " . $user->name);
 	$userDao->userData = $user;
 	
 	if($userDao->get()){
 		echo json_encode($userDao->list);
-	}else{
-		echo "Error.";
 	}
 
-	
 }
 ?>
