@@ -36,13 +36,13 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioServic
     function($rootScope, $scope, $location, UsuarioService){
 		$rootScope.activetab = $location.path();
 		
-		$scope.items = UsuarioService.getUsers();
-		
 		$scope.refresh = function(){
 			UsuarioService.getUsers().then(function(users){
 				$scope.items = users;
 			});
 		};
+		
+		$scope.refresh();
 	}
 ]);
 
