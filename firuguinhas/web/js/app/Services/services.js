@@ -14,11 +14,16 @@ app.service('UsuarioService', ['$http', function($http){
 			};
 		
         return $http.post(baseUrl, data)
-	        .then(function(response) {
-	    		console.log("Status: " + response.status);
-	    		
-	    		return true;
-	        });
+	        .then(
+	        	function(response) {
+	        		console.log("Status: " + response.status);
+	    			return true;
+	        	},
+	        	function(response){
+	        		console.log("Status: " + response.status);
+	        		return false;
+	        	}
+	        );
 	};
 	
 	this.getUsers = function(){

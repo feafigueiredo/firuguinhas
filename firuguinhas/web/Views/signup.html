@@ -1,10 +1,18 @@
 <!-- login.html -->
 <div class="page-header">
 	<div class="content">
-	   <h1>Login</h1>
-	   <p>Usuário: <input type="text" ng-model="user"/></p>
-	   <p>Nome: <input type="text" ng-model="name"/></p>
-	   <p>Senha: <input type="password" ng-model="pass"/></p>
-	   <button ng-click="signup();">Cadastrar</button>
+		<h1>Login</h1>
+		<p>
+			Usuário: <input class="error" type="text" name="user" ng-model="user" required/>
+			<span class="icon error"></span>
+		</p>
+		<p>
+			Nome: <input class="ok" type="text" ng-model="name"/>
+			<span class="icon ok"></span>
+		</p>
+		<p>
+			Senha: <input type="password" ng-model="pass"/>
+		</p>
+		<button ng-click="signup();">Cadastrar</button>
 	</div>
 </div>

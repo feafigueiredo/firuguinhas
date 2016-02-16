@@ -7,3 +7,29 @@ body{
 	margin: 0 auto;
 	background-color: white;
 }
+
+input .error{
+	border-color: red;
+	color: red;
+}
+
+input .ok{
+	border-color: green;
+	color: green;
+}
+
+.icon{
+	width: 20px;
+	height: 20px;
+}
+span .error{
+	border: solid 1px red;
+	background-color: red;
+	border-radius: 100%;
+}
+
+span .ok{
+	border: solid 1px green;
+	background-color: green;
+	border-radius: 100%;
+}

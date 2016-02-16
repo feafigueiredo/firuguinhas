@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// if unable to create the product, tell the user
 	else{
 	    error_log( "Unable to create user." );
-	    http_response_code(404);
+	    http_response_code(403);
 	}
 }
 
