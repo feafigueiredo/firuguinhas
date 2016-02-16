@@ -29,10 +29,10 @@ app.factory('UsuarioService', ['$http', function($http){
 		
 		var data = "";
 		$http.get(baseUrl, data)
-    	.success(function(data, status) {
-    		console.log("Data: " + data);
+    	.success(function(response, status) {
+    		console.log("Data: " + response.data);
     		
-    		return data;
+    		return response.data;
     	})
     	.error(function(){
     		return;
