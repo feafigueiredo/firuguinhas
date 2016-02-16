@@ -30,6 +30,8 @@ app.factory('UsuarioService', ['$http', function($http){
 		var data = "";
 		$http.get(baseUrl, data)
     	.then(function(response) {
+    		console.log("Users: " + response.data.length);
+    		
     		return response.data;
         });
 	};
