@@ -14,25 +14,23 @@ $user = new Usuario();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
-	$data = json_decode(file_get_contents("php://input")); 
+	$json = file_get_contents("php://input");
+	$error_log( "User received: " . $json);
+
+	$obj = json_decode($json); 
 	
-	error_log( file_get_contents("php://input") );
-	error_log( $data );
-	
-	foreach($data as $obj){
-		$user->user = $obj["user"];
-		$user->name = $obj["name"];
-		$user->pass = $obj["pass"];
-		     
-		// create the product
-		if($userDao->insert()){
-		    echo "Product was created.";
-		}
-		 
-		// if unable to create the product, tell the user
-		else{
-		    echo "Unable to create product.";
-		}
+	$user->user = $obj["user"];
+	$user->name = $obj["name"];
+	$user->pass = $obj["pass"];
+	     
+	// create the product
+	if($userDao->insert()){
+	    echo "Product was created.";
+	}
+	 
+	// if unable to create the product, tell the user
+	else{
+	    echo "Unable to create product.";
 	}
 }
 
