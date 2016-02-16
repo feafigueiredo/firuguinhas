@@ -39,7 +39,11 @@ class UsuarioDAO{
     	if($stmt->execute()){
     		return true;
     	}else{
-    		error_log($stmt->errorInfo());
+    		$arr = $stmt->errorInfo();
+    		
+    		foreach ($arr as $line){
+	    		error_log($line);
+    		}
     		return false;
     	}
     }

@@ -29,12 +29,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	     
 	// create the product
 	if($userDao->insert()){
-	    error_log(  "Product was created." );
+	    error_log(  "User was created." );
 	}
 	 
 	// if unable to create the product, tell the user
 	else{
-	    error_log( "Unable to create product." );
+	    error_log( "Unable to create user." );
 	}
 }
 
