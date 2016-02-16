@@ -37,10 +37,12 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioServic
 		$rootScope.activetab = $location.path();
 
 		$scope.items = UsuarioService.getUsers();
+		$scope.$apply();
 		
 		$scope.refresh = function(){
 			console.log("Refresh:");
 			$scope.items = UsuarioService.getUsers();
+			$scope.$apply();
 		};
 	}
 ]);
