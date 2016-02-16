@@ -1,7 +1,7 @@
 'use strict';
  
 app.factory('UsuarioService', ['$http', function($http){
-	var baseUrl = "/firuguinhas/api/usuario.php";
+	var baseUrl = "/firuguinhas/api/Services/usuario.php";
 
 	function signup(user, name, pass) {
 		console.log("Sign Up - Service")
