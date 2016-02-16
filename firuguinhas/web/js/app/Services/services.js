@@ -13,7 +13,7 @@ app.service('UsuarioService', ['$http', function($http){
 				'pass': pass
 			};
 		
-        $http.post(baseUrl, data)
+        return $http.post(baseUrl, data)
 	        .then(function(response) {
 	    		console.log("Status: " + response.status);
 	    		
