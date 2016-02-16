@@ -39,11 +39,9 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioServic
 		$scope.items = UsuarioService.getUsers();
 		
 		$scope.refresh = function(){
-			$scope.items = UsuarioService.getUsers();
-			
-			console.log(UsuarioService.getUsers());
-			
-
+			UsuarioService.getUsers().then(function(users){
+				$scope.items = users;
+			});
 		};
 	}
 ]);
