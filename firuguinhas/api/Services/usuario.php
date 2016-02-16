@@ -29,6 +29,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
 	$user->log();
 	
+	$userDao->userData = $user;
+	
 	// create the product
 	if($userDao->insert()){
 	    error_log(  "User was created." );
