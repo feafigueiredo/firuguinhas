@@ -29,24 +29,10 @@ app.factory('UsuarioService', ['$http', function($http){
 		
 		var data = "";
 		$http.get(baseUrl, data)
-    	.success(function(response, status) {
-    		console.log("Data: " + response.data);
-    		
+    	.then(function(response) {
+    		console.log("Status: " + response.status);
     		return response.data;
-    	})
-    	.error(function(){
-    		return;
-    	});
-		/*
-		$http({
-			  method: 'GET',
-			  url: baseUrl
-			}).then(function successCallback(response) {
-			    $rootScope.items = response.data;
-			  }, function errorCallback(response) {
-			    $rootScope.items = ['Teste', 'Teste2'];
-			  });
-			  */
+        });
 	};
 	
 	return {
