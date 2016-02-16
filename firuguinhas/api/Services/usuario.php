@@ -26,7 +26,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$user->user = $obj->user;
 	$user->name = $obj->name;
 	$user->pass = $obj->pass;
-	     
+	
+	$user->log();
+	
 	// create the product
 	if($userDao->insert()){
 	    error_log(  "User was created." );
