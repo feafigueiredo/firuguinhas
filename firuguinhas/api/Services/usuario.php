@@ -16,6 +16,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
 	$data = json_decode(file_get_contents("php://input")); 
 	
+	error_log( file_get_contents("php://input") );
+	error_log( $data );
+	
 	foreach($data as $obj){
 		$user->user = $obj["user"];
 		$user->name = $obj["name"];
