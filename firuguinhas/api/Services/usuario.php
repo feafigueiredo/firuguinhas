@@ -34,12 +34,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// create the product
 	if($userDao->insert()){
 	    error_log(  "User was created." );
-	    echo "Success!";
+	    http_response_code(200);
 	}
 	 
 	// if unable to create the product, tell the user
 	else{
 	    error_log( "Unable to create user." );
+	    http_response_code(404);
 	}
 }
 
