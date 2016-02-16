@@ -15,7 +15,7 @@ $user = new Usuario();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
 	$json = file_get_contents("php://input");
-	$error_log( "User received: " . $json);
+	error_log( "User received: " . $json);
 
 	$obj = json_decode($json); 
 	
