@@ -39,7 +39,6 @@ app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioServic
 		$scope.refresh = function(){
 			console.log("Refresh:");
 			$scope.items = UsuarioService.getUsers();
-			$scope.$apply();
 		};
 	}
 ]);
