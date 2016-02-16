@@ -89,12 +89,12 @@ app.controller('SignUpCtrl',['$rootScope', '$scope', '$location', 'UsuarioServic
 			console.log("SignUp:");
 			
 			if(UsuarioService.signup($scope.user, $scope.name, $scope.pass)){
-				console.log("Autenticado com sucesso!");
+				console.log("Cadastrado com sucesso!");
 				$rootScope.autenticado = true;
 				$rootScope.usuario = $scope.user;
 				$location.path('/');				
 			}else{
-				console.log("Nao autenticado!");
+				console.log("Nao cadastrado!");
 			}
 		};
 	}

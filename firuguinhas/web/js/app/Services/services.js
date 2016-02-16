@@ -14,12 +14,11 @@ app.service('UsuarioService', ['$http', function($http){
 			};
 		
         $http.post(baseUrl, data)
-        	.success(function(data, status) {
-        		return true;
-        	})
-        	.error(function(){
-        		return false;
-        	});
+	        .then(function(response) {
+	    		console.log("Status: " + response.status);
+	    		
+	    		return true;
+	        });
 	};
 	
 	this.getUsers = function(){
@@ -27,10 +26,10 @@ app.service('UsuarioService', ['$http', function($http){
 		
 		var data = "";
 		return $http.get(baseUrl, data)
-    	.then(function(response) {
-    		console.log("Users: " + response.data.length);
-    		
-    		return response.data;
-        });
+	    	.then(function(response) {
+	    		console.log("Users: " + response.data.length);
+	    		
+	    		return response.data;
+	        });
 	};
 }]);
