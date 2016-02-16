@@ -39,10 +39,7 @@ class UsuarioDAO{
     	if($stmt->execute()){
     		return true;
     	}else{
-    		echo "<pre>";
-    		print_r($stmt->errorInfo());
-    		echo "</pre>";
-    
+    		error_log($stmt->errorInfo());
     		return false;
     	}
     }
