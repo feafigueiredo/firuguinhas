@@ -8,7 +8,7 @@
    	colecionar o mesmo album que você, possuam as figurinhas repetidas que te 
    	faltam, assim tornando fácil e divertido o processo de se completar um álbum.
    	</p>
-   	<p>Lista de usuarios cadastrados: {{ hello }}</p>
+   	<p>Lista de usuarios cadastrados: <button ng-click="refresh();">Atualizar</button></p>
    	<ul>
    		<li ng-repeat="item in items">{{ item.user }} - {{ item.name }}</li>
    	</ul>

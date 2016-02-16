@@ -35,8 +35,13 @@ app.controller('HomeCtrl', ['$rootScope', '$location',
 app.controller('AboutCtrl', ['$rootScope', '$scope', '$location', 'UsuarioService',
     function($rootScope, $scope, $location, UsuarioService){
 		$rootScope.activetab = $location.path();
-		$scope.hello = "Hello";
+
 		$scope.items = UsuarioService.getUsers();
+		
+		$scope.refresh = function(){
+			console.log("Refresh:");
+			$scope.items = UsuarioService.getUsers();
+		};
 	}
 ]);
 
