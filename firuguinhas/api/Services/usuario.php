@@ -12,6 +12,10 @@ $userDao = new UsuarioDAO($db);
 include_once $_SERVER['DOCUMENT_ROOT'].'/firuguinhas/api/Objects/Usuario.php';
 $user = new Usuario();
 
+
+error_log( "########## Services - Usuario ##########");
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	// get posted data
 	$json = file_get_contents("php://input");
@@ -38,6 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$user->user = $_GET["user"];
 	$user->name = $_GET["name"];
 
+	error_log("user: " . $user . "_#_name: " . $name);
 	$userDao->userData = $user;
 	
 	if($userDao->get()){
