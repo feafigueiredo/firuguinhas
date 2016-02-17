@@ -20,10 +20,10 @@
 				Nome: <input name="name" type="text" ng-model="user.name" required/>
 			</p>
 			<div class="rel">
-				<i class="ok" ng-show="signup.name.$touched && signup.name.$valid">
+				<i class="ok" ng-show="signup.name.$dirty && signup.name.$valid">
 					<span></span>
 				</i>
-				<i class="error" ng-show="signup.name.$touched && signup.name.$invalid">
+				<i class="error" ng-show="signup.name.$dirty && signup.name.$invalid">
 					<span></span>
 				</i>
 			</div>
