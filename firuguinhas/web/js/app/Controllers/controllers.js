@@ -20,6 +20,7 @@ app.controller('AuthCtrl', ['$rootScope', '$scope',
 			  
 			  $scope.email = profile.getEmail();
 			  $scope.image = profile.getImageUrl();
+			  $rootScope.user = profile.getName();
 			  
 			  $rootScope.autenticado = true;	
 			};
