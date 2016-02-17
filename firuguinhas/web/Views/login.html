@@ -1,7 +1,6 @@
 <!-- login.html -->
 <div class="page-header">
 <h1>Entrar</h1>
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	<form>
 		<div class="cont">
 			<p>Usuário: <input type="text" ng-model="user"/></p>
@@ -11,6 +10,13 @@
 		</div>
 		<div class="cont">
 			<button ng-click="login();">Entrar</button>
+			<button class="g-signin " 
+                data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email"
+                data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                data-accesstype="offline"
+                data-callback="onSignIn"
+                data-theme="dark">
+            </button>
 		</div>
 	</form>
 </div>
