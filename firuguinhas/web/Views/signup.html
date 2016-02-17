@@ -1,16 +1,16 @@
-<!-- signup.html -->
+<!-- form.html -->
 
 <div class="page-header">
 	<div id="content">
-	<form name="signup" class="css-form">
+	<form name="form" class="css-form">
 		<h1>Cadastrar</h1>
 		<div class="cont">
 			<p style="float: left">Usuário: <input type="text" name="user" ng-model="user.id" required/></p>
 			<div class="rel">
-				<i class="ok" ng-show="signup.user.$dirty && signup.user.$valid">
+				<i class="ok" ng-show="form.user.$dirty && form.user.$valid">
 					<span></span>
 				</i>
-				<i class="error" ng-show="signup.user.$dirty && signup.user.$invalid">
+				<i class="error" ng-show="form.user.$dirty && form.user.$invalid">
 					<span></span>
 				</i>
 			</div>
@@ -20,10 +20,10 @@
 				Nome: <input name="name" type="text" ng-model="user.name" required/>
 			</p>
 			<div class="rel">
-				<i class="ok" ng-show="signup.name.$dirty && signup.name.$valid">
+				<i class="ok" ng-show="form.name.$dirty && form.name.$valid">
 					<span></span>
 				</i>
-				<i class="error" ng-show="signup.name.$dirty && signup.name.$invalid">
+				<i class="error" ng-show="form.name.$dirty && form.name.$invalid">
 					<span></span>
 				</i>
 			</div>
@@ -33,10 +33,10 @@
 				Senha: <input name="pass" type="password" ng-model="user.pass" required />
 			</p>
 			<div class="rel">
-				<i class="ok" ng-show="signup.pass.$dirty && signup.pass.$valid">
+				<i class="ok" ng-show="form.pass.$dirty && form.pass.$valid">
 					<span></span>
 				</i>
-				<i class="error" ng-show="signup.pass.$dirty && signup.pass.$invalid">
+				<i class="error" ng-show="form.pass.$dirty && form.pass.$invalid">
 					<span></span>
 				</i>
 			</div>
