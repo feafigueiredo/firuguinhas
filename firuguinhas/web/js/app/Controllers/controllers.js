@@ -23,8 +23,9 @@ app.controller('AuthCtrl', ['$rootScope', '$scope',
 			  $rootScope.user = profile.getName();
 			  
 			  $rootScope.autenticado = true;	
-			};
+		};
 
+		window.onSignIn = $scope.onSignIn;
 	}
 ]);
 
