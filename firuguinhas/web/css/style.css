@@ -37,8 +37,7 @@ p input[type="text"], p input[type="password"]{
   width: 30px;
 }
 
-.userInfo{
-	position: relative;
+.nav-tabs>li.userInfo{
 	float: right;
 	background-color: #DDD;
 	
