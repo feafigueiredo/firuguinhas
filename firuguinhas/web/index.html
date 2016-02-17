@@ -3,8 +3,10 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta http-equiv="content-language" content="pt-br" />
-      <meta name="google-signin-client_id" content="565185329117-5j03qs1n195q5apmdl3uc9uicfqp284t.apps.googleusercontent.com">
       
+      <meta name="google-signin-scope" content="profile email">
+      <meta name="google-signin-client_id" content="565185329117-5j03qs1n195q5apmdl3uc9uicfqp284t.apps.googleusercontent.com">
+
       <title>Firuguinhas - Seu portal para completar seus albuns!</title>
       
       <link rel="stylesheet" href="/firuguinhas/web/css/bootstrap.min.css" />
@@ -22,6 +24,16 @@
 			<li ng-class="{active: activetab == '/contact'}"><a href="#contact">Contato</a></li>
 			<li ng-hide="autenticado"ng-class="{active: activetab == '/login'}"><a href="#login">Entrar</a></li>
 			<li ng-hide="autenticado"ng-class="{active: activetab == '/signup'}"><a href="#signup">Cadastrar</a></li>
+			<li>			
+				<div class="g-signin2" 
+					data-onsuccess="onSignIn" 
+					data-theme="dark" 
+					data-width="370" 
+					data-height="50" 
+					data-longtitle="true" 
+					data-lang="pt-BR">
+				</div>
+			</li>
 			<li ng-show="autenticado"><a ng-click="logout()" href="#logout">Sair</a></li>
 		</ul>
 	      
@@ -36,5 +48,15 @@
       <script src="/firuguinhas/web/js/app/Controllers/controllers.js"></script>
 	  <script src="/firuguinhas/web/js/app/Services/services.js"></script>
 	  
+		<script>
+		function onSignIn(googleUser) {
+			  var profile = googleUser.getBasicProfile();
+			  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			  console.log('Name: ' + profile.getName());
+			  console.log('Image URL: ' + profile.getImageUrl());
+			  console.log('Email: ' + profile.getEmail());
+			};
+		</script>
+
    </body>
 </html>
