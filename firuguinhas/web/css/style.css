@@ -30,6 +30,7 @@ p input[type="text"], p input[type="password"]{
 	margin-top: 5px;
 }
 .rel{
+  margin: 2px 0 0 1px;
   position: relative;
   float: left;
   height: 30px;

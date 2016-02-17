@@ -32,6 +32,19 @@
 			<p style="float: left">
 				Senha: <input name="pass" type="password" ng-model="user.pass" required/>
 			</p>
+			<div class="rel">
+				<i class="ok" ng-show="signup.name.$dirty && signup.name.$valid && user.pass eq user.confirm">
+					<span></span>
+				</i>
+				<i class="error" ng-show="signup.name.$dirty && signup.name.$invalid">
+					<span></span>
+				</i>
+			</div>
+		</div>
+		<div class="cont">	
+			<p style="float: left">
+				Confirmar: <input name="pass" type="password" ng-model="user.confirm" required/>
+			</p>
 		</div>
 		<div class="cont">	
 			<button ng-click="signup();">Cadastrar</button>
