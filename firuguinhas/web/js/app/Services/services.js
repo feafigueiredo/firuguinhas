@@ -27,7 +27,7 @@ app.service('UsuarioService', ['$http', function($http){
 	};
 	
 	this.getUsers = function(){
-		console.log("Get Users - Service")
+		console.log("Get Users - Service");
 		
 		var data = "";
 		return $http.get(baseUrl, data)
@@ -37,4 +37,5 @@ app.service('UsuarioService', ['$http', function($http){
 	    		return response.data;
 	        });
 	};
+	
 }]);
