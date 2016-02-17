@@ -11,21 +11,13 @@ p input[type="text"], p input[type="password"]{
 	float: right;
 }
 
-.css-form input.ng-invalid.ng-touched {
+.css-form input.ng-invalid.ng-dirty {
 	border-color: red;
 	color: red;
 }
-.css-form input.ng-valid.ng-touched {
+.css-form input.ng-valid.ng-dirty {
 	border-color: green;
 	color: green;
-}
-
-input[type="text"].error{
-
-}
-
-input[type="text"].ok{
-
 }
 
 .cont{
