@@ -21,8 +21,8 @@ i.ok span:after{
   content: "";
   display: block;
   position: absolute;
-  top: 3px;
-  left: 2px;
+  top: 5px;
+  left: 4px;
   width: 12px;
   height: 7px;
   border:solid #FFF;
@@ -47,8 +47,8 @@ i.error span:after{
   content: "";
   display: block;
   position: absolute;
-  top: 7px;
-  left: 5px;
+  top: 8px;
+  left: 4px;
   width: 15px;
   height: 7px;
   border:solid #FFF;
@@ -60,8 +60,8 @@ i.error span:before{
   content: "";
   display: block;
   position: absolute;
-  top: 7px;
-  left: 0px;
+  top: 8px;
+  left: 1px;
   width: 15px;
   height: 7px;
   border:solid #FFF;
