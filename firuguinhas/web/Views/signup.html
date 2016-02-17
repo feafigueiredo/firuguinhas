@@ -30,20 +30,20 @@
 		</div>	
 		<div class="cont">	
 			<p style="float: left">
-				Senha: <input name="pass" type="password" ng-model="user.pass" required/>
+				Senha: <input name="pass" type="password" ng-model="user.pass" required data-password-verify="user.confirm"/>
 			</p>
 			<div class="rel">
-				<i class="ok" ng-show="signup.name.$dirty && signup.name.$valid && user.pass eq user.confirm">
+				<i class="ok" ng-show="signup.pass.$dirty && signup.pass.$valid && user.pass eq user.confirm">
 					<span></span>
 				</i>
-				<i class="error" ng-show="signup.name.$dirty && signup.name.$invalid">
+				<i class="error" ng-show="signup.pass.$dirty && signup.pass.$invalid">
 					<span></span>
 				</i>
 			</div>
 		</div>
 		<div class="cont">	
 			<p style="float: left">
-				Confirmar: <input name="pass" type="password" ng-model="user.confirm" required/>
+				Confirmar: <input name="pass" type="password" ng-model="user.confirm" required data-password-verify="user.pass"/>
 			</p>
 		</div>
 		<div class="cont">	
