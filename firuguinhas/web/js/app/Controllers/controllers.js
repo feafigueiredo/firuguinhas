@@ -12,6 +12,15 @@ app.controller('AuthCtrl', ['$rootScope', '$scope',
 			console.log("Loging off!");
 			$rootScope.autenticado = false;	  
 		};
+		
+		$scope.onSignIn = function(googleUser) {
+			  var profile = googleUser.getBasicProfile();
+			
+			  console.log("Logado como: " + profile.getName());
+			  
+			  $scope.email = profile.getEmail();
+			  $scope.image = profile.getImageUrl();
+			};
 
 	}
 ]);
