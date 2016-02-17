@@ -3,14 +3,14 @@
 app.service('UsuarioService', ['$http', function($http){
 	var baseUrl = "/firuguinhas/api/Services/usuario.php";
 
-	this.signup = function(user, name, pass) {
+	this.signup = function(user) {
 		console.log("Sign Up - Service")
 	
 		var data = 
 			{
-				'user': user,
-				'name': name,
-				'pass': pass
+				'user': user.id,
+				'name': user.name,
+				'pass': user.pass
 			};
 		
         return $http.post(baseUrl, data)

@@ -1,18 +1,41 @@
-<!-- login.html -->
+<!-- signup.html -->
+
 <div class="page-header">
-	<div class="content">
-		<h1>Login</h1>
-		<p>
-			Usuário: <input class="error" type="text" name="user" ng-model="user" required/>
-			<span class="icon error"></span>
-		</p>
-		<p>
-			Nome: <input class="ok" type="text" ng-model="name"/>
-			<span class="icon ok"></span>
-		</p>
-		<p>
-			Senha: <input type="password" ng-model="pass"/>
-		</p>
-		<button ng-click="signup();">Cadastrar</button>
+	<div id="content">
+	<form name="signup" class="css-form">
+		<h1>Cadastrar</h1>
+		<div class="cont">
+			<p style="float: left">Usuário: <input type="text" name="user" ng-model="user.id" required/></p>
+			<div class="rel">
+				<i class="ok" ng-show="signup.user.$touched && myForm.myName.$valid">
+					<span></span>
+				</i>
+				<i class="error" ng-show="signup.user.$touched && myForm.myName.$invalid">
+					<span></span>
+				</i>
+			</div>
+		</div>
+		<div class="cont">
+			<p style="float: left">
+				Nome: <input name="name" type="text" ng-model="user.name" required/>
+			</p>
+			<div class="rel">
+				<i class="ok" ng-show="signup.name.$touched && myForm.myName.$valid">
+					<span></span>
+				</i>
+				<i class="error" ng-show="signup.name.$touched && myForm.myName.$invalid">
+					<span></span>
+				</i>
+			</div>
+		</div>	
+		<div class="cont">	
+			<p style="float: left">
+				Senha: <input name="pass" type="password" ng-model="user.pass" required/>
+			</p>
+		</div>
+		<div class="cont">	
+			<button ng-click="signup();">Cadastrar</button>
+		</div>
+	</form>
 	</div>
 </div>
