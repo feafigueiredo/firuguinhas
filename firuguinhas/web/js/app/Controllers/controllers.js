@@ -6,12 +6,7 @@
 app.controller('AuthCtrl', ['$rootScope', '$scope', 
     function($rootScope, $scope){
 		console.log("Initialized!");
-		$rootScope.autenticado = false;
-  
-		$scope.logout = function(){
-			console.log("Loging off!");
-			$rootScope.autenticado = false;	  
-		};
+		$scope.autenticado = false;
 		
 		$scope.onSignIn = function(googleUser) {
 			  var profile = googleUser.getBasicProfile();
@@ -20,9 +15,9 @@ app.controller('AuthCtrl', ['$rootScope', '$scope',
 			  
 			  $scope.email = profile.getEmail();
 			  $scope.image = profile.getImageUrl();
-			  $rootScope.user = profile.getName();
+			  $scope.user = profile.getName();
 			  
-			  $rootScope.autenticado = true;	
+			  $scope.autenticado = true;	
 		};
 
 		window.onSignIn = $scope.onSignIn;
