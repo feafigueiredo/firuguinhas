@@ -1,9 +1,16 @@
 <!-- login.html -->
 <div class="page-header">
-	<div class="content">
-	   <h1>Entrar</h1>
-	   <p>Usuário: <input type="text" ng-model="user"/></p>
-	   <p>Senha: <input type="password" ng-model="pass"/></p>
-	   <button ng-click="login();">Entrar</button>
-	</div>
+<h1>Entrar</h1>
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<form>
+		<div class="cont">
+			<p>Usuário: <input type="text" ng-model="user"/></p>
+		</div>
+		<div class="cont">
+			<p>Senha: <input type="password" ng-model="pass"/></p>
+		</div>
+		<div class="cont">
+			<button ng-click="login();">Entrar</button>
+		</div>
+	</form>
 </div>
