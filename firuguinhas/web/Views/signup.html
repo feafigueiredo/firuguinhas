@@ -7,10 +7,10 @@
 		<div class="cont">
 			<p style="float: left">Usuário: <input type="text" name="user" ng-model="user.id" required/></p>
 			<div class="rel">
-				<i class="ok" ng-show="signup.user.$touched && signup.user.$valid">
+				<i class="ok" ng-show="signup.user.$dirty && signup.user.$valid">
 					<span></span>
 				</i>
-				<i class="error" ng-show="signup.user.$touched && signup.user.$invalid">
+				<i class="error" ng-show="signup.user.$dirty && signup.user.$invalid">
 					<span></span>
 				</i>
 			</div>
