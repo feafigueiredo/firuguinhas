@@ -13,11 +13,11 @@ app.controller('AuthCtrl', ['$rootScope', '$scope',
 			
 			  console.log("Logado como: " + profile.getName());
 			  
-			  $scope.email = profile.getEmail();
-			  $scope.image = profile.getImageUrl();
-			  $scope.user = profile.getName();
+			  $rootScope.email = profile.getEmail();
+			  $rootScope.image = profile.getImageUrl();
+			  $rootScope.user = profile.getName();
 			  
-			  $scope.autenticado = true;	
+			  $rootScope.autenticado = true;	
 		};
 
 		window.onSignIn = $scope.onSignIn;
