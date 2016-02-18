@@ -11,13 +11,18 @@ app.controller('AuthCtrl', ['$rootScope', '$scope',
 		$scope.onSignIn = function(googleUser) {
 			  var profile = googleUser.getBasicProfile();
 			
-			  console.log("Logado como: " + profile.getName());
+			  console.log("Reconhecido como: " + profile.getName());
+			  console.log("       Google id: " + profile.getId());
+			  console.log("           Token: " + googleUser.getAuthResponse().id_token);
 			  
 			  $rootScope.email = profile.getEmail();
 			  $rootScope.image = profile.getImageUrl();
 			  $rootScope.user = profile.getName();
 			  
 			  $scope.autenticado = true;	
+			  
+			  $location.path('/');	
+			  
 		};
 
 		window.onSignIn = $scope.onSignIn;
