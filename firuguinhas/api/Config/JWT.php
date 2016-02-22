@@ -1,28 +1,25 @@
 <?php 
 class JWT{ // specify your own database credentials 
-	public $conn; // get the database connection 
-
-	private $key = ""; 
-	private $token;
 	
-	private $header;
-	private $payload;
-	private $signature;
+	private $aud = "";
+	public $id;
+	public $user;
 	
 	// constructor with $token received
 	public function __construct($token){
-		$this->token = $token;
+		$json = file_get_contents("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=$token");
+		$jwt = json_decode($json);
 		
-		list($hr, $pd, $se) = explode(".", $token);
+		if($jwt->aud == $this->aud){
+			$this->id = $jwt->sub;
+			
+			$u = explode("@", $jwt->email);
+			$this->user = $u[0];
+		}else{
+			$this->id = null;
+		}
 		
-		$this->header = base64_decode($hr);
-		$this->payload = base64_decode($pd);
-		
-		error_log($this->header);
 	}
-	
-	public function getPayload(){
-		return $this->payload;
-	}
+
 }
 ?>

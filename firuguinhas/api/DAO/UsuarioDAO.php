@@ -24,14 +24,15 @@ class UsuarioDAO{
     	$query = "INSERT INTO $this->table_name
             SET
     			codigo=:codigo, 
-    			nome=:nome";
+    			usuario=:nome,
+    			pontos=0";
     	 
     	// prepare query
     	$stmt = $this->conn->prepare($query);
     
     	// bind values
     	$stmt->bindParam(":codigo", $user->id);
-    	$stmt->bindParam(":nome", $user->name);
+    	$stmt->bindParam(":nome", $user->user);
     	 
     	// execute query
     	if($stmt->execute()){
@@ -71,6 +72,23 @@ class UsuarioDAO{
     		array_push($this->list, $newUser);
     	}
     	
+    	return true;
+    }
+    
+    public function login(){
+    	$user = $this->userData;
+    	 
+    	$query = "UPDATE $this->table_name SET points=(points + 1) WHERE codigo=:codigo";
+    	
+    	// prepare query
+    	$stmt = $this->conn->prepare($query);
+    	
+    	// bind values
+    	$stmt->bindParam(":codigo", $user->id);
+    	 
+    	if(!$rs = $this->conn->query($query)){
+    		return false;
+    	}
     	return true;
     }
 }
