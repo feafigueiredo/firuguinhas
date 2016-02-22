@@ -27,19 +27,22 @@ switch($_SERVER['REQUEST_METHOD']){
 	
 	$jwt = new JWT($obj->token);
 	
-	$userDao->userData = $user;
+	$payload = $jwt->getPayload();
+	
+	error_log($payload);
+// 	$userDao->userData = $user;
 	
 	// create the product
-	if($userDao->insert()){
-	    error_log(  "User was created." );
-	    http_response_code(200);
-	}
+// 	if($userDao->insert()){
+// 	    error_log(  "User was created." );
+// 	    http_response_code(200);
+// 	}
 	 
 	// if unable to create the product, tell the user
-	else{
-	    error_log( "Unable to create user." );
-	    http_response_code(403);
-	}
+// 	else{
+// 	    error_log( "Unable to create user." );
+// 	    http_response_code(403);
+// 	}
 	break;// POST
 
 	case 'GET':

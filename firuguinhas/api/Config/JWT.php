@@ -20,5 +20,9 @@ class JWT{ // specify your own database credentials
 		
 		error_log($this->header);
 	}
+	
+	public function getPayload(){
+		return $this->payload;
+	}
 }
 ?>
