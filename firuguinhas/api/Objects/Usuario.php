@@ -1,12 +1,12 @@
 <?php
 class Usuario{
 	// object properties
+	public $id;
 	public $user;
-	public $name;
-	public $pass;
+	public $points;
 	
 	public function log(){
-		error_log("(#)User: " . $this->user . "\n(#)Name: " . $this->name . "\n(#)Pass: " . $this->pass);
+		error_log("(#)ID: " . $this->id . "\n(#)User: " . $this->user . "\n(#)Points: " . $this->points);
 	}
 }
 ?>

@@ -64,8 +64,9 @@ class UsuarioDAO{
     	foreach ($rs as $dados){
     		$newUser = new Usuario();
     		
-    		$newUser->user = $dados[user];
-    		$newUser->name = $dados[name];
+    		$newUser->id = $dados[codigo];
+    		$newUser->user = $dados[usuario];
+    		$newUser->points = $dados[pontos];
     		
     		array_push($this->list, $newUser);
     	}
