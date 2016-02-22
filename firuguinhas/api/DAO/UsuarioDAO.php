@@ -51,7 +51,7 @@ class UsuarioDAO{
     	
     	$user = $this->userData;
     	
-    	$query = "SELECT codigo, usuario, pontos FROM $this->table_name";
+    	$query = "SELECT usuario, pontos FROM $this->table_name";
     	if($user->user != null){
     		$query = $query . " WHERE usuario = '$user->user'";
     	}
@@ -65,7 +65,6 @@ class UsuarioDAO{
     	foreach ($rs as $dados){
     		$newUser = new Usuario();
     		
-    		$newUser->id = $dados[codigo];
     		$newUser->user = $dados[usuario];
     		$newUser->points = $dados[pontos];
     		
