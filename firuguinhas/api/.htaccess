@@ -2,6 +2,6 @@ RewriteBase /firuguinhas/api/
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  RewriteRule ^api/usuario/([0-9]+)/?$ /Services/usuario.php&id=$1 [NC,L]
-  RewriteRule ^api/usuario/([a-z]+)/?$ /Services/usuario.php&user=$1 [NC,L]
+  RewriteRule ^api/usuario/([0-9]+)/?$ Services/usuario.php&id=$1 [NC,L]
+  RewriteRule ^api/usuario/([a-z]+)/?$ Services/usuario.php&user=$1 [NC,L]
 </IfModule>	
