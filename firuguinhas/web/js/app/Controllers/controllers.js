@@ -3,26 +3,30 @@
  * Auth
  ******************************************************************************
  */
-app.controller('AuthCtrl', ['$rootScope', '$scope', 
-    function($rootScope, $scope){
+app.controller('AuthCtrl', ['$rootScope', '$scope', '$location', 'UsuarioService', 
+    function($rootScope, $scope, $location, UsuarioService){
 		console.log("Initialized!");
 		$scope.autenticado = false;
 		
 		$scope.onSignIn = function(googleUser) {
 			  var profile = googleUser.getBasicProfile();
 			
-			  console.log("Reconhecido como: " + profile.getName());
-			  console.log("       Google id: " + profile.getId());
-			  console.log("           Token: " + googleUser.getAuthResponse().id_token);
 			  
-			  $rootScope.email = profile.getEmail();
-			  $rootScope.image = profile.getImageUrl();
-			  $rootScope.user = profile.getName();
-			  
-			  $scope.autenticado = true;	
-			  
-			  $location.path('/');	
-			  
+			  UsuarioService.signup(googleUser.getAuthResponse().id_token).then(function(resp){
+					if(resp){
+						console.log("Logado com sucesso!");
+						
+						$rootScope.email = profile.getEmail();
+						$rootScope.image = profile.getImageUrl();
+						$rootScope.user = profile.getName();
+						$scope.autenticado = true;	
+						
+						$location.path('/');	
+					}else{
+						console.log("Nao cadastrado!");
+					}
+				});
+
 		};
 
 		window.onSignIn = $scope.onSignIn;

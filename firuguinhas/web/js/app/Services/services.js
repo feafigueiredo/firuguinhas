@@ -3,15 +3,10 @@
 app.service('UsuarioService', ['$http', function($http){
 	var baseUrl = "/api/usuario/";
 
-	this.signup = function(user) {
+	this.signup = function(token) {
 		console.log("Sign Up - Service")
 	
-		var data = 
-			{
-				'id': user.name,
-				'user': user.id,
-				'points': user.pass
-			};
+		var data = { 'token': token };
 		
         return $http.post(baseUrl, data)
 	        .then(
