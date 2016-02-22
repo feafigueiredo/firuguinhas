@@ -1,0 +1,8 @@
+RewriteBase /
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^api\/usuario\/([a-z]+)\/?$ /firuguinhas/api/Services/usuario.php?user=$1 [NC,L]
+  RewriteRule ^api\/usuario\/?$ /firuguinhas/api/Services/usuario.php [NC,L]
+</IfModule>	

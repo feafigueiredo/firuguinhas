@@ -1,16 +1,16 @@
 'use strict';
  
 app.service('UsuarioService', ['$http', function($http){
-	var baseUrl = "/firuguinhas/api/Services/usuario.php";
+	var baseUrl = "/api/usuario.php";
 
 	this.signup = function(user) {
 		console.log("Sign Up - Service")
 	
 		var data = 
 			{
+				'id': user.name,
 				'user': user.id,
-				'name': user.name,
-				'pass': user.pass
+				'points': user.pass
 			};
 		
         return $http.post(baseUrl, data)
