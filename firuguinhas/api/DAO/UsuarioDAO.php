@@ -21,19 +21,17 @@ class UsuarioDAO{
     	$user = $this->userData;
     	
     	// query to insert record
-    	$query = "INSERT INTO " . $this->table_name . "
+    	$query = "INSERT INTO $this->table_name
             SET
-    			user=:user, 
-    			name=:name, 
-    			pass=:pass";
+    			codigo=:codigo, 
+    			nome=:nome";
     	 
     	// prepare query
     	$stmt = $this->conn->prepare($query);
     
     	// bind values
-    	$stmt->bindParam(":user", $user->user);
-    	$stmt->bindParam(":name", $user->name);
-    	$stmt->bindParam(":pass", $user->pass);
+    	$stmt->bindParam(":codigo", $user->id);
+    	$stmt->bindParam(":nome", $user->name);
     	 
     	// execute query
     	if($stmt->execute()){
@@ -52,9 +50,9 @@ class UsuarioDAO{
     	
     	$user = $this->userData;
     	
-    	$query = "SELECT user, name FROM " . $this->table_name;
+    	$query = "SELECT codigo, usuario, pontos FROM $this->table_name";
     	if($user->user != null){
-    		$query = $query . " WHERE user = '" . $user->user . "'";
+    		$query = $query . " WHERE usuario = '$user->user'";
     	}
     	
     	if(!$rs = $this->conn->query($query)){
