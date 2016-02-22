@@ -1,7 +1,7 @@
 <?php 
 class JWT{ // specify your own database credentials 
 	
-	private $aud = "";
+	private $aud = "565185329117-5j03qs1n195q5apmdl3uc9uicfqp284t.apps.googleusercontent.com";
 	public $id;
 	public $user;
 	
