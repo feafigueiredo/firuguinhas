@@ -10,6 +10,8 @@ class JWT{ // specify your own database credentials
 		$json = file_get_contents("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=$token");
 		$jwt = json_decode($json);
 		
+		error_log($json);
+		
 		if($jwt->aud == $this->aud){
 			$this->id = $jwt->sub;
 			

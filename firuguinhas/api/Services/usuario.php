@@ -30,6 +30,7 @@ switch($_SERVER['REQUEST_METHOD']){
 	if($jwt->id == null){
 		error_log( "Unable to create user." );
  	    http_response_code(403);
+ 	    die();
 	}
 	
 	error_log("  ID: $jwt->id\nUser: $jwt->user");
