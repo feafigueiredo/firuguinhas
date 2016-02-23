@@ -5,23 +5,27 @@
  */
 app.controller('AuthCtrl', ['$rootScope', '$scope', '$location', 'UsuarioService', 
     function($rootScope, $scope, $location, UsuarioService){
-		console.log("Initialized!");
-		$scope.autenticado = false;
+	
+		$scope.logedIn(profile){
+			$rootScope.email = profile.getEmail();
+			$rootScope.image = profile.getImageUrl();
+			$rootScope.user = profile.getName();
+			$scope.autenticado = true;	
+			
+			
+			
+			$location.path('/');	
+		}
 		
 		$scope.onSignIn = function(googleUser) {
 			  var profile = googleUser.getBasicProfile();
-			
+			  var token = googleUser.getAuthResponse().id_token;
 			  
-			  UsuarioService.signup(googleUser.getAuthResponse().id_token).then(function(resp){
+			  UsuarioService.signup(token).then(function(resp){
 					if(resp){
 						console.log("Logado com sucesso!");
-						
-						$rootScope.email = profile.getEmail();
-						$rootScope.image = profile.getImageUrl();
-						$rootScope.user = profile.getName();
-						$scope.autenticado = true;	
-						
-						$location.path('/');	
+						localStorage.setItem("myToken", token);
+						$scope.logedIn(profile, token);
 					}else{
 						console.log("Nao cadastrado!");
 					}
@@ -30,6 +34,13 @@ app.controller('AuthCtrl', ['$rootScope', '$scope', '$location', 'UsuarioService
 		};
 
 		window.onSignIn = $scope.onSignIn;
+		
+		console.log("Initialized!");
+		var token = localStorage.getItem("myToken");
+		$scope.autenticado = false;
+		if(token != null){
+			
+		}
 	}
 ]);
 
