@@ -80,9 +80,11 @@
 }
 
 .manchete a{
-	margin: 10px 5px 5px 5px;
+	margin: 10px 5px 5px;
 }
 .manchete img{
+	border-radius: 30%;
+	border: 2px solid #996;
 	height: 200px;
 	width: 300px;
 	margin: inherit;
@@ -101,6 +103,19 @@
 }
 
 .manchete hr{
-	clear: both;
-	margin: 10px;
+	float: left;
+	width: calc(100% - 20px);
+	margin: 10px 0 0;
+	text-align: center;
+	border: none;
+	border-top: medium double #996;
+}
+.manchete hr:after{
+	content: "~*~";
+	color: #996;
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    padding: 0 0.25em;
+	background: #EEE;
 }
