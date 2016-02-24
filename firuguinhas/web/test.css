@@ -68,7 +68,9 @@
 }
 
 .post:after{
+	content: "-";
 	clear: both;
+	visibility: hidden;
 }
 .post a{
 	text-decoration: none;
