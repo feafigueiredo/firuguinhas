@@ -1,18 +1,25 @@
+*{
+	margin: 0;
+	padding: 0;
+}
 #content{
 	width: 1000px;
-	margin: 0 auto;
+	margin: 60px auto;
+	clear: both;
 }
+
 #header{
-	position: relative;
-	background-color: #996;
-	height: 250px;
+	position: fixed;
+	height: 60px;
 	width: 100%;
+	z-index: 9999;
+	top: 0;
 }
 
 #nav{
-	width: 100%;
+	width: 1000px;
 	position: absolute;
-	
+	background-color: #996;
 	padding: 0;
 	bottom: 5px;
 	border-width: 2px 0 2px 0;
@@ -57,23 +64,43 @@
 }
 
 .manchete{
-
+	position: relative;
+	clear: both;
 }
-
-.manchete .header{
+.manchete a{
+	text-decoration: none;
+	color: #000;
+}
+.manchete h1{
 	width: 100%;
 	text-align: center;
 	background-color: #996;
 	color: #FFF;
+	font-size: 15px;
 }
 
-.manchete .titulo{
-	font-size: 25px;
+.manchete a{
 	margin: 10px 5px 5px 5px;
 }
-
 .manchete img{
 	height: 200px;
 	width: 300px;
-		margin: 10px 5px 5px 5px;
+	margin: inherit;
+	float: left;
+}
+.manchete h2{
+	width: 650px;
+	font-size: 25px;
+	margin: inherit;
+	float: left;
+}
+
+.manchete p{
+	width: 650px;
+	float: left;
+}
+
+.manchete hr{
+	clear: both;
+	margin: 10px;
 }
