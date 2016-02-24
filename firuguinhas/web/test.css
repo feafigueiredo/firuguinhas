@@ -63,15 +63,15 @@
 	
 }
 
-.manchete{
+.post{
 	position: relative;
 	clear: both;
 }
-.manchete a{
+.post a{
 	text-decoration: none;
 	color: #000;
 }
-.manchete h1{
+.post h1{
 	width: 100%;
 	text-align: center;
 	background-color: #996;
@@ -79,10 +79,10 @@
 	font-size: 15px;
 }
 
-.manchete a{
+.post a{
 	margin: 10px 5px 5px;
 }
-.manchete img{
+.post img{
 	border-radius: 30%;
 	border: 2px solid #996;
 	height: 200px;
@@ -90,19 +90,19 @@
 	margin: inherit;
 	float: left;
 }
-.manchete h2{
+.post h2{
 	width: 650px;
 	font-size: 25px;
 	margin: inherit;
 	float: left;
 }
 
-.manchete p{
+.post p{
 	width: 650px;
 	float: left;
 }
 
-.manchete hr{
+.post hr{
 	float: left;
 	width: calc(100% - 20px);
 	margin: 10px 0 0;
@@ -110,7 +110,7 @@
 	border: none;
 	border-top: medium double #996;
 }
-.manchete hr:after{
+.post hr:after{
 	content: "~*~";
 	color: #996;
     display: inline-block;
