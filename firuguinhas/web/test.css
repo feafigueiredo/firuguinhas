@@ -65,6 +65,9 @@
 
 .post{
 	position: relative;
+}
+
+.post:after{
 	clear: both;
 }
 .post a{
